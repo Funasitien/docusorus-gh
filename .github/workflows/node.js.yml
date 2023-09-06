@@ -1,34 +1,38 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: deploy-docusaurus
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-
+  publish:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npx create-docusaurus@latest docoudoc classic
-    - run: npm run build --if-present
-    - run: npm test
-    - run: cd docoudoc
-    - run: npx docusaurus start
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check out repo
+        uses: actions/checkout@v2
+      # Node is required for npm
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      # Install and build Docusaurus website
+      - name: Build Docusaurus website
+        run: |
+          cd website
+          npm install 
+          npm run build
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: website/build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
