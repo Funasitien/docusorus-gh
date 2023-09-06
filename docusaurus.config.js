@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'fr',
-    locales: ['en, fr'],
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
   },
 
   presets: [
@@ -130,7 +130,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} DreamCloud Devlopment.`,
       },
       prism: {
         theme: lightCodeTheme,
