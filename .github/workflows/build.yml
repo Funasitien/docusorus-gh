@@ -1,5 +1,7 @@
 name: Deploy to GitHub Pages
-
+with:
+  github_token: ${{ secrets.GH_PAT }}
+  
 on:
   push:
     branches:
