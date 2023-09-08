@@ -1,5 +1,5 @@
 # Docusaurus GitHub
-<a href="https://github.com/Funasitien/docusaurus-gh/generate">
+<a href="https://github.com/Funasitien/docausorus-gh/generate">
   <img src="https://img.shields.io/badge/use%20this-template-blue?logo=github&style=for-the-badge">
 </a>
 
