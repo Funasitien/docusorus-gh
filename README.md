@@ -14,5 +14,9 @@ First, [create a repo with this template](https://github.com/Funasitien/docausor
 
 If you want to add a custom domain, create a File named `CNAME` in the `static` folder and put in this file the domain you want to use
 
-# And that's it!
+### And that's it!
+If you like this template, please add a Star to it, it would help us ! 
+![GitHub Repo stars](https://img.shields.io/github/stars/Funasitien/docausorus-gh?style=for-the-badge&label=%E2%9C%A8%EF%B8%8F%20Stars&color=yellow)
+
+
 
