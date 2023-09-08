@@ -16,6 +16,8 @@ If you want to add a custom domain, create a File named `CNAME` in the `static` 
 
 ### And that's it!
 If you like this template, please add a Star to it, it would help us ! 
+
+
 ![GitHub Repo stars](https://img.shields.io/github/stars/Funasitien/docausorus-gh?style=for-the-badge&label=%E2%9C%A8%EF%B8%8F%20Stars&color=yellow)
 
 
